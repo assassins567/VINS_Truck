@@ -1,30 +1,30 @@
 %YAML:1.0
 
 #common parameters
-imu_topic: "/imu_3dm_gx4/imu"
-image_topic: "/mv_25001498/image_raw"
-output_path: "/home/tony-ws1/output/"
+imu_topic: "/imu0"
+image_topic: "/cam0/image_raw"
+output_path: "/home/kingmoon/Documents/MasterA/catkin_ws/src/VINS-Mono/config/calib_output/topview_front"
 
 # MEI is better than PINHOLE for large FOV camera
 model_type: MEI
 camera_name: camera
-image_width: 752
-image_height: 480
+image_width: 1280
+image_height: 1080
 mirror_parameters:
-   xi: 2.057e+00
+   xi: 0.8682687683
 distortion_parameters:
-   k1: 7.145e-02
-   k2: 5.059e-01
-   p1: 4.727e-05
-   p2: -5.492e-04
+   k1: -0.1083219697
+   k2: -0.004073764325
+   p1: -0.0005725567597
+   p2: 9.712147005e-05
 projection_parameters:
-   gamma1: 1.115e+03
-   gamma2: 1.114e+03
-   u0: 3.672e+02
-   v0: 2.385e+02
+   gamma1: 6.035513255e+02
+   gamma2: 6.038779779e+02
+   u0: 640.6126929  #the principal point
+   v0: 542.116261
 
 # Extrinsic parameter between IMU and Camera.
-estimate_extrinsic: 0   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+estimate_extrinsic: 1   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
                         # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
                         # 2  Don't know anything about extrinsic parameters. You don't need to give R,T. We will try to calibrate it. Do some rotation movement at beginning. 
 #If you choose 0 or 1, you should write down the following matrix.
@@ -33,16 +33,16 @@ extrinsicRotation: !!opencv-matrix
    rows: 3
    cols: 3
    dt: d
-   data: [ 0, 0, -1, 
-           -1, 0, 0, 
-           0, 1, 0]
+   data: [ -0.998621,  -0.0529646, -0.00262091,
+           0.0477631,   -0.920025,    0.388924,
+           0.0230442,   -0.388283,    -0.92126]
 
 #Translation from camera frame to imu frame, imu^T_cam
 extrinsicTranslation: !!opencv-matrix
    rows: 3
    cols: 1
    dt: d
-   data: [ 0, 0, 0.02]
+   data: [ -0.0272448, 3.66471, 1.06151]
 
 #feature traker paprameters
 
@@ -51,8 +51,8 @@ min_dist: 20            # min distance between two features
 freq: 20                # frequence (Hz) of publish tracking result. At least 10Hz for good estimation. If set 0, the frequence will be same as raw image 
 F_threshold: 1.0        # ransac threshold (pixel)
 show_track: 1           # publish tracking image as topic
-equalize: 0             # if image is too dark or light, trun on equalize to find enough features
-fisheye: 0              # if using fisheye, trun on it. A circle mask will be loaded to remove edge noisy points
+equalize: 1             # if image is too dark or light, trun on equalize to find enough features
+fisheye: 1              # if using fisheye, trun on it. A circle mask will be loaded to remove edge noisy points
 #optimization parameters
 
 max_solver_time: 0.035   # max solver itration time (ms), to guarantee real time
@@ -67,10 +67,10 @@ gyr_w: 4.0e-5       # gyroscope bias random work noise standard deviation.
 g_norm: 9.805       #
 
 #loop closure parameters
-loop_closure: 0                 # start loop closure
-load_previous_pose_graph: 0     # load and reuse previous pose graph; load from 'pose_graph_save_path'
+loop_closure: 1                 # start loop closure
+load_previous_pose_graph: 1     # load and reuse previous pose graph; load from 'pose_graph_save_path'
 fast_relocalization: 0          # useful in real-time and large project
-pose_graph_save_path: "/home/tony-ws1/output/pose_graph/" # save and load path
+pose_graph_save_path: "/home/kingmoon/Documents/MasterA/catkin_ws/src/VINS-Mono/config/output_pose_graph/topview_front/topview_front" # save and load path
 
 #unsynchronization parameters
 estimate_td: 0                      # online estimate time offset between camera and imu

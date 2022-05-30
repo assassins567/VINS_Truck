@@ -8,8 +8,8 @@ output_path: "/home/tony-ws1/output/"
 #camera calibration 
 model_type: KANNALA_BRANDT
 camera_name: camera
-image_width: 512
-image_height: 512
+image_width: 1280
+image_height: 1080
 projection_parameters:
    k2: 0.0034823894022493434
    k3: 0.0007150348452162257
@@ -17,11 +17,11 @@ projection_parameters:
    k5: 0.00020293673591811182
    mu: 190.97847715128717
    mv: 190.9733070521226
-   u0: 254.93170605935475
-   v0: 256.8974428996504
+   u0: 640.6126929
+   v0: 542.116261
 
 # Extrinsic parameter between IMU and Camera.
-estimate_extrinsic: 0   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+estimate_extrinsic: 2   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
                         # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
                         # 2  Don't know anything about extrinsic parameters. You don't need to give R,T. We will try to calibrate it. Do some rotation movement at beginning.                        
 #If you choose 0 or 1, you should write down the following matrix.

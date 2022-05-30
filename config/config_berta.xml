@@ -1,0 +1,962 @@
+<parameter_server major_version="1" minor_version="4">
+
+<include src="config_catalogs.xml"/>
+<include src="config_$(trailer).xml" optional="true"/>
+
+<!-- ................. -->
+<!-- VEHICLE: Berta -->
+<!--  -->
+<!-- .......................................................................................................................... -->
+<vehicle>
+  <name>Berta</name>
+  <comment>HHTP Vehicle</comment>
+  <vehicle_type>MAN TGX XXL</vehicle_type>
+  <license_plate>M-AN-0000</license_plate>
+  <ground_clearance>208</ground_clearance>
+  <width>2.500</width>
+  <width_with_mirror>3.0</width_with_mirror>
+  <length>5.875</length>
+  <height>3.754</height>
+  <mass>7000</mass>
+  <overhang_front>1.475</overhang_front>
+  <overhang_rear>0.800</overhang_rear>
+  <tire_circumference>3.181</tire_circumference>
+  <tire_circumference_front>3.126</tire_circumference_front>
+  <track_width_front>2.049</track_width_front>
+  <track_width_rear>1.804</track_width_rear>
+  <turn_radius>15.100</turn_radius>
+  <wheel_base>3.600</wheel_base>
+  <rotation_center_chassis>1.8, 0.0, 0.77</rotation_center_chassis>
+  <rotation_center_cabin>4.03, 0.0, 0.95</rotation_center_cabin>
+  <fifth-wheel>0.573, 0.002, 1.068</fifth-wheel>
+  <outline>
+    -1.475, -1.250,
+    -1.475, 1.250,
+    4.580, 1.250,
+    4.580, 1.500,
+    4.780, 1.500,
+    4.780, 1.250,
+    5.075, 1.250,
+    5.075, -1.250,
+    4.780, -1.250,
+    4.780, -1.500,
+    4.580, -1.500,
+    4.580, -1.250   
+  </outline>
+
+  <!-- ....... -->
+  <!-- Sensors -->
+  <!-- ....... -->
+  <sensors> 
+    <!-- .......... -->
+    <!-- Xsens  MTi -->
+    <!-- 8mm Buffers included in z -->
+    <!-- .......... -->
+    <xsens_mti alias="/sensor_catalog/xsens_mti">;
+      <alignment>
+        <comment>by Aicon2ConfigXml Tool (Rain - IAV)</comment>
+        <translation>
+            1.43334150,-0.00546510,0.90664840
+        </translation>
+        <rotation>
+            0.0297,0.9995,0.0113,
+            0.9995,-0.0298,0.0076,
+            -0.0079,-0.0111,0.9999
+        </rotation>
+      </alignment>
+      <imu_data alias="/sensor_catalog/xsens_mti/imu_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </imu_data>
+    </xsens_mti>
+  
+    <!-- ...................... -->
+   <!-- Delphi RSDS Front Left -->
+   <!-- ...................... -->
+    <delphi_rsds_front_left alias="/sensor_catalog/delphi_rsds_front_left">
+      <alignment>
+        <translation>
+            4.98125100,1.10828200,0.38147060
+        </translation>
+        <rotation>
+            0.87030000,-0.49209072,0.01849828,
+            0.49230000,0.87033236,-0.00898782,
+            -0.01170000,0.01692881,0.99978849
+        </rotation>
+      </alignment>
+      
+      <internal_pair_id>1</internal_pair_id>
+
+      <object_data alias="/sensor_catalog/delphi_rsds_front_left/object_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </object_data>
+    </delphi_rsds_front_left>
+   
+    <!-- ....................... -->
+    <!-- Delphi RSDS Front Right -->
+    <!-- ....................... -->
+    <delphi_rsds_front_right alias="/sensor_catalog/delphi_rsds_front_right">
+        <alignment>
+        <translation>
+            4.97231010,-1.13416920,0.39062200
+        </translation>
+        <rotation>
+            0.85930000,0.51096509,0.02451631,
+            -0.51110000,0.85956849,-0.00087951,
+            -0.02150000,-0.01177452,0.99969904
+        </rotation>
+      </alignment>
+      
+      <internal_pair_id>2</internal_pair_id>
+      
+      <object_data alias="/sensor_catalog/delphi_rsds_front_right/object_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </object_data>
+    </delphi_rsds_front_right>
+   
+   
+    <!-- ..................... -->
+    <!-- Delphi RSDS Side Left -->
+    <!-- ..................... -->
+    <delphi_rsds_side_left alias="/sensor_catalog/delphi_rsds_side_left">
+      <alignment>
+        <translation>
+            1.75683570,1.23992830,0.51174730
+        </translation>
+        <rotation>
+            0.01110000,-0.99989795,0.00171249,
+            0.99980000,0.01112302,0.01412177,
+            -0.01410000,0.00155539,0.99989882
+        </rotation>
+      </alignment>
+      
+      <internal_pair_id>1</internal_pair_id>
+      
+      <object_data alias="/sensor_catalog/delphi_rsds_side_left/object_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </object_data>
+    </delphi_rsds_side_left>
+   
+    <!-- ...................... -->
+    <!-- Delphi RSDS Side Right -->
+    <!-- ...................... -->
+    <delphi_rsds_side_right alias="/sensor_catalog/delphi_rsds_side_right">
+      <alignment>
+        <translation>
+            1.74935400,-1.25392260,0.50728460
+        </translation>
+        <rotation>
+            -0.00030000,0.99992446,-0.00796503,
+            -0.99990000,-0.00038440,-0.01059022,
+            -0.01060000,0.00796105,0.99991220
+        </rotation>
+      </alignment>
+    
+      <internal_pair_id>2</internal_pair_id>
+    
+      <object_data alias="/sensor_catalog/delphi_rsds_side_right/object_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </object_data>
+    </delphi_rsds_side_right>
+
+
+    <!-- AC 100 ................. -->
+    <!-- ...............TO DO............... -->
+    
+    <trw_ac100_front alias="/sensor_catalog/trw_ac100_front">
+      <alignment>
+        <comment>by Aicon2ConfigXml Tool (Rain - IAV)</comment>
+        <translation>
+          4.98687150,0.01795220,0.63510190
+        </translation>
+        <rotation>
+          1.00000000,0.00674681,0.00493312,
+          -0.00680000,0.99995414,0.01075797,
+          -0.00490000,-0.01079151,0.99992996
+        </rotation>
+      </alignment>
+      
+      <object_data alias="/sensor_catalog/trw_ac100_front/object_data">
+        <active>true</active>
+        <reference_frame>
+          <translation alias="../../alignment/translation"/>
+          <rotation>
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1
+          </rotation>
+        </reference_frame>
+      </object_data>
+    </trw_ac100_front>
+    
+    <!-- ................... -->
+    <!-- Valeo ScaLa C Front -->
+    <!-- ................... -->
+    <valeo_scala_front>
+      <sensor_header alias="/sensor_catalog/valeo_scala_c_front/sensor_header"/>
+      
+      <alignment>
+        <comment>by Aicon2ConfigXml Tool (Rain - IAV)</comment>
+        <translation>
+            5.04545560,-0.25774480,0.84894470
+        </translation>
+        <rotation>
+            0.99990000,-0.00186706,0.01566991,
+            0.00200000,0.99998757,-0.00844741,
+            -0.01570000,0.00847791,0.99984154
+        </rotation>
+      </alignment>
+
+      <object_data alias="/sensor_catalog/valeo_scala_c_front/object_data">
+          <active>false</active>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/valeo_scala_c_front/scan_data">
+        <active>false</active>
+      </scan_data>
+
+      <internal>
+        <sensor-parameters>
+          <IPAddress>224.100.100.76:22017</IPAddress>
+          <OffsetX alias="../../alignment/translation[0]"/>
+          <OffsetY alias="../../alignment/translation[1]"/>
+          <OffsetZ alias="../../alignment/translation[2]"/>
+          <HAngleOffset>0.11deg</HAngleOffset>
+          <VAngleOffset>0.9deg</VAngleOffset>
+          <RAngleOffset>0.49deg</RAngleOffset>
+        </sensor-parameters>
+      </internal>
+    </valeo_scala_front>
+    
+    <!-- ........................ -->
+    <!-- Valeo ScaLa C Front Left -->
+    <!-- Vorne links -->
+    <!-- ........................ -->
+    <valeo_scala_front_left alias="/sensor_catalog/valeo_scala_c_front_left">
+      <alignment>
+        <comment>by Aicon2ConfigXml Tool (Rain - IAV)</comment>
+        <translation>
+            4.94257700,1.13246970,0.48132870
+        </translation>
+        <rotation>
+            0.53200000,-0.84667827,0.01257974,
+            0.84670000,0.53208929,0.00512680,
+            -0.01100000,0.00792381,0.99990773
+        </rotation>
+      </alignment>
+      
+      <object_data alias="/sensor_catalog/valeo_scala_c_front_left/object_data">
+        <active>false</active>
+      </object_data>
+      
+      <scan_data alias="/sensor_catalog/valeo_scala_c_front_left/scan_data">
+        <active>false</active>
+        <reference_frame alias="../alignment"/>
+      </scan_data>
+
+      <internal>
+        <sensor-parameters>
+          <IPAddress>224.100.100.72:22017</IPAddress>
+          <OffsetX alias="../../alignment/translation[0]"/>
+          <OffsetY alias="../../alignment/translation[1]"/>
+          <OffsetZ alias="../../alignment/translation[2]"/>
+          <HAngleOffset>57.86deg</HAngleOffset>
+          <VAngleOffset>0.63deg</VAngleOffset>
+          <RAngleOffset>0.45deg</RAngleOffset>
+        </sensor-parameters>
+      </internal>
+
+    </valeo_scala_front_left>
+    
+    <!-- ......................... -->
+    <!-- Valeo ScaLa C Front Right -->
+    <!-- Vorne rechts -->
+    <!-- ......................... -->
+    <valeo_scala_front_right alias="/sensor_catalog/valeo_scala_c_front_right">
+      <alignment>
+        <comment>by Aicon2ConfigXml Tool (Rain - IAV)</comment>
+        <translation>
+            4.93039620,-1.15614450,0.49142140
+        </translation>
+        <rotation>
+            0.51130000,0.85918032,0.01741139,
+            -0.85910000,0.51153741,-0.01408470,
+            -0.02100000,-0.00775662,0.99974920
+        </rotation>
+      </alignment>
+      
+      
+      <object_data alias="/sensor_catalog/valeo_scala_c_front_right/object_data">
+        <active>false</active>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/valeo_scala_c_front_right/scan_data">
+        <active>false</active>
+        <reference_frame alias="../alignment"/>
+      </scan_data>
+
+      <internal>
+        <sensor-parameters>
+          <IPAddress>224.100.100.71:22017</IPAddress>
+          <OffsetX alias="../../alignment/translation[0]"/>
+          <OffsetY alias="../../alignment/translation[1]"/>
+          <OffsetZ alias="../../alignment/translation[2]"/>
+          <HAngleOffset>-59.24deg</HAngleOffset>
+          <VAngleOffset>1.2deg</VAngleOffset>
+          <RAngleOffset>-0.44deg</RAngleOffset>
+        </sensor-parameters>
+      </internal>
+
+    </valeo_scala_front_right>
+    
+    <!-- .................. -->
+    <!-- Valeo ScaLa C Left -->
+    <!-- Mitte Links -->
+    <!-- .................. -->
+    <valeo_scala_left>
+      <sensor_header alias="/sensor_catalog/valeo_scala_c_left/sensor_header"/>
+
+      <alignment>
+        <comment>by Aicon2ConfigXml Tool (Rain - IAV)</comment>
+        <translation>
+            1.75596170,1.23558810,0.61271390
+        </translation>
+        <rotation>
+            0.00520000,-0.99991061,-0.01421785,
+            1.00000000,0.00526906,-0.00569749,
+            0.00490000,-0.01418822,0.99988269
+        </rotation>
+      </alignment>
+
+      <object_data alias="/sensor_catalog/valeo_scala_c_left/object_data">
+          <active>false</active>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/valeo_scala_c_left/scan_data">
+        <active>false</active>
+      </scan_data>
+
+      <internal>
+        <sensor-parameters>
+          <IPAddress>224.100.100.75:22017</IPAddress>
+          <OffsetX alias="../../alignment/translation[0]"/>
+          <OffsetY alias="../../alignment/translation[1]"/>
+          <OffsetZ alias="../../alignment/translation[2]"/>
+          <HAngleOffset>89.7deg</HAngleOffset>
+          <VAngleOffset>-0.28deg</VAngleOffset>
+          <RAngleOffset>-0.81deg</RAngleOffset>
+        </sensor-parameters>
+      </internal>
+    </valeo_scala_left>
+    
+    
+    <!-- ................... -->
+    <!-- Valeo ScaLa C Right -->
+    <!-- Mitte rechts -->
+    <!-- ................... -->
+    <valeo_scala_right>
+      <sensor_header alias="/sensor_catalog/valeo_scala_c_right/sensor_header"/>
+
+      <alignment>
+        <comment>by Aicon2ConfigXml Tool (Rain - IAV)</comment>
+        <translation>
+            1.75054600,-1.25051570,0.60755690
+        </translation>
+        <rotation>
+            -0.00300000,0.99992581,0.01227263,
+            -1.00000000,-0.00298136,-0.00137349,
+            -0.00150000,-0.01227675,0.99992375
+        </rotation>
+      </alignment>
+
+      <object_data alias="/sensor_catalog/valeo_scala_c_right/object_data">
+          <active>false</active>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/valeo_scala_c_right/scan_data">
+        <active>false</active>
+      </scan_data>
+
+      <internal>
+        <sensor-parameters>
+          <IPAddress>224.100.100.74:22017</IPAddress>
+          <OffsetX alias="../../alignment/translation[0]"/>
+          <OffsetY alias="../../alignment/translation[1]"/>
+          <OffsetZ alias="../../alignment/translation[2]"/>
+          <HAngleOffset>-90.17deg</HAngleOffset>
+          <VAngleOffset>0.09deg</VAngleOffset>
+          <RAngleOffset>-0.7deg</RAngleOffset>
+        </sensor-parameters>
+      </internal>
+    </valeo_scala_right>
+    
+    
+    <!-- ................ -->
+    <!-- Ibeo Laser Fused -->
+    <!-- ................ -->
+    <ibeo_laser_fused alias="/sensor_catalog/ibeo_laser_fused">
+      <alignment>
+        <translation>0.0, 0.0, 0.0</translation>
+        <rotation>
+          1.0,  0.0,  0.0, 
+          0.0,  1.0,  0.0,
+          0.0,  0.0,  1.0
+        </rotation>
+      </alignment>
+      
+      <object_data alias="/sensor_catalog/ibeo_laser_fused/object_data">
+        <active>false</active>
+        <reference_frame alias="../alignment"/>
+        <status_handling>CRITICAL</status_handling>
+        <status_timeout>2</status_timeout>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/ibeo_laser_fused/scan_data">
+        <active>false</active>
+      </scan_data>
+
+      <internal>
+        <sensor-set>
+          <!-- sensor1> valeo_scala_front </sensor1>
+          <sensor2> valeo_scala_front_left </sensor2>
+          <sensor3> valeo_scala_front_right </sensor3>
+          <sensor4> valeo_scala_left </sensor4> 
+          <sensor5> valeo_scala_right </sensor5 -->
+          <sensor1> valeo_scala_front_left </sensor1>
+          <sensor2> valeo_scala_front_right </sensor2>
+          <sensor3> valeo_scala_left </sensor3> 
+          <sensor4> valeo_scala_right </sensor4>
+          <sensor5> valeo_scala_front </sensor5>
+        </sensor-set>
+      </internal>
+    </ibeo_laser_fused>
+
+    
+      <!-- ............................... -->
+    <!-- Velodyne Puck Single front left -->
+    <!-- ............................... -->
+    <velodyne_puck_single_front_left alias="/sensor_catalog/velodyne_puck_single_front_left_vlp32">
+        
+      <alignment>
+        <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38; yaw post-calibration done</comment>
+        <translation>5.086530372, 1.229678893, 1.931771801</translation>
+        <rotation>
+        0.9826, -0.182, 0.0382,
+        0.1812, 0.9832, 0.0237,
+        -0.0419, -0.0164, 0.999
+       </rotation>
+      </alignment>
+      
+      <object_data alias="/sensor_catalog/velodyne_puck_single_front_left_vlp32/object_data">
+        <active>false</active>
+        <reference_frame alias="../alignment"/>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/velodyne_puck_single_front_left_vlp32/scan_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </scan_data>
+
+    </velodyne_puck_single_front_left>
+    
+    
+    <!-- ............................... -->
+    <!-- Velodyne Puck Single front right -->
+    <!-- ............................... -->
+   <velodyne_puck_single_front_right alias="/sensor_catalog/velodyne_puck_single_front_right_vlp32">
+        
+      <alignment>
+        <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38; yaw post-calibration done</comment>
+        <translation>5.07983271, -1.249045816, 1.98231996</translation>
+        <rotation>
+        0.9646, 0.2627, -0.0241,
+        -0.2626, 0.9649, 0.0066,
+        0.025, -0.0, 0.9997
+       </rotation>
+      </alignment>
+      
+      <object_data alias="/sensor_catalog/velodyne_puck_single_front_right_vlp32/object_data">
+        <active>false</active>
+        <reference_frame alias="../alignment"/>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/velodyne_puck_single_front_right_vlp32/scan_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </scan_data>
+
+    </velodyne_puck_single_front_right>
+
+        
+    <!-- ............................... -->
+    <!-- Velodyne Puck Single rear center Trailer-->
+    <!-- ............................... -->
+    <velodyne_puck_single_rear alias="/trailer/sensors/velodyne_puck_single_rear">
+    </velodyne_puck_single_rear>
+    
+    <!-- ............................ -->
+    <!-- Ouster OS0 Front-Top         -->
+    <!-- ............................ -->
+    <ouster_os0_front_top alias="/sensor_catalog/ouster_os0_front_top">
+
+      <alignment>
+        <comment>
+            todo: calibration
+       </comment>
+       <translation>5.1, 0, 3.35</translation>
+       <rotation>
+           0.3584, 0, 0.9336,
+         0, 1.0000, 0,
+   -0.9336, 0, 0.3584
+       </rotation>
+       </alignment>
+       
+       <scan_data alias = "/sensor_catalog/ouster_os0_front_top/scan_data">
+       <active>true</active>
+         <reference_frame alias = "../alignment"/>
+       </scan_data>   
+
+      <internal>
+        <command_link>
+          <Port>7501</Port>
+          <Host>192.168.2.150</Host>
+        </command_link>
+        <scandata_link>
+          <RxPort>6510</RxPort>
+          <!-- Interface>192.168.2.111</Interface -->
+        </scandata_link>
+      </internal>
+
+    </ouster_os0_front_top>
+
+    <!-- ............................ -->
+    <!-- Ouster OS0 Front-Left-Top    -->
+    <!-- ............................ -->
+    <ouster_os0_front_left_top alias="/sensor_catalog/ouster_os0_front_left_top">
+
+      <alignment>
+        <comment>
+            todo: calibration
+       </comment>
+       <translation>  4.29, 1.4, 3.12 </translation>
+       <rotation>
+           1.0000, 0 , 0,
+         0, 0.5150, 0.8572,
+         0, -0.8572, 0.5150
+       </rotation>
+       </alignment>
+       
+       <scan_data alias = "/sensor_catalog/ouster_os0_front_left_top/scan_data">
+       <active>true</active>
+         <reference_frame alias = "../alignment"/>
+       </scan_data>   
+
+      <internal>
+        <command_link>
+          <Port>7501</Port>
+          <Host>192.168.2.151</Host>
+        </command_link>
+        <scandata_link>
+          <RxPort>6520</RxPort>
+          <!-- Interface>192.168.2.111</Interface -->
+        </scandata_link>
+      </internal>
+
+    </ouster_os0_front_left_top>
+    
+    <!-- ............................ -->
+    <!-- Ouster OS0 Front-Right-Top   -->
+    <!-- ............................ -->
+    <ouster_os0_front_right_top alias="/sensor_catalog/ouster_os0_front_right_top">
+
+      <alignment>
+        <comment>
+            todo: calibration
+       </comment>
+       <translation>  4.30, -1.4, 3.12 </translation>
+       <rotation>
+           1.0000, 0, 0,
+         0, 0.5519, -0.8339,
+         0, 0.8339, 0.5519
+       </rotation>
+       </alignment>
+       
+       <scan_data alias = "/sensor_catalog/ouster_os0_front_right_top/scan_data">
+       <active>true</active>
+         <reference_frame alias = "../alignment"/>
+       </scan_data>   
+
+      <internal>
+        <command_link>
+          <Port>7501</Port>
+          <Host>192.168.2.152</Host>
+        </command_link>
+        <scandata_link>
+          <RxPort>6530</RxPort>
+          <!-- Interface>192.168.2.111</Interface -->
+        </scandata_link>
+      </internal>
+
+    </ouster_os0_front_right_top>
+    
+    <!-- ............................ -->
+    <!-- Ouster OS0 Rear-Bottom -->
+    <!-- ............................ -->
+    <ouster_os0_rear_bottom alias="/sensor_catalog/ouster_os0_rear_bottom">
+
+      <alignment>
+        <comment>
+            todo: calibration
+       </comment>
+       <translation>  -0.9, 0, 0.8 </translation>
+       <rotation>
+           -1, 0, 0,
+           0, -1, 0,
+           0, 0, 1
+       </rotation>
+       </alignment>
+       
+       <scan_data alias = "/sensor_catalog/ouster_os0_rear_bottom/scan_data">
+       <active>true</active>
+         <reference_frame alias = "../alignment"/>
+       </scan_data>   
+
+      <internal>
+        <command_link>
+          <Port>7501</Port>
+          <Host>192.168.2.153</Host>
+        </command_link>
+        <scandata_link>
+          <RxPort>6540</RxPort>
+          <!--Interface>192.168.2.111</Interface -->
+        </scandata_link>
+      </internal>
+
+    </ouster_os0_rear_bottom>
+    
+    <!-- ................... -->
+    <!-- Velodyne Puck Fused -->
+    <!-- ................... -->
+    <velodyne_puck_fused alias="/sensor_catalog/velodyne_puck_fused">
+      <!-- 
+           TODO:   Get virtual sensor mounting position from Jens Rieken 
+           Not needed at the moment, cause Data contains alignment and rotation
+      -->
+      <alignment>
+        <translation>4.3, 0, 1.5</translation>
+        <rotation>
+          1,  0,  0,
+          0,  1,  0,
+          0,  0,  1
+        </rotation>
+      </alignment>
+      
+      <object_data alias="/sensor_catalog/velodyne_puck_fused/object_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </object_data>
+
+      <scan_data alias="/sensor_catalog/velodyne_puck_fused/scan_data">
+        <active>true</active>
+        <reference_frame alias="../alignment"/>
+      </scan_data>
+    </velodyne_puck_fused>    
+                
+        
+   <!-- ................ -->
+   <!-- Conti SVS LVDS Front  -->
+   <!-- ................ -->
+   <conti_svs_front alias="/sensor_catalog/conti_svs_lvds_front">
+    
+     <alignment>
+       <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+       <translation alias="../video_data/reference_frame/translation"/>
+       <rotation>
+           0.3782411037, -0.01834055657, 0.9255254137, 
+           -0.02121110211, 0.9993695078, 0.02847237177, 
+           -0.9254640764, -0.03040083538, 0.3776136022
+           </rotation>
+     </alignment>
+    
+     <video_data alias="/sensor_catalog/conti_svs_lvds_front/video_data">
+       <active>true</active>
+       <reference_frame>
+         <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+         <translation>5.107402201, -0.1338370139, 1.927591546</translation>
+         <rotation>
+           0.01834055657, -0.9255254137, 0.3782411037, 
+           -0.9993695078, -0.02847237177, -0.02121110211, 
+           0.03040083538, -0.3776136022, -0.9254640764
+           </rotation>
+       </reference_frame>
+       <camera_model>
+         <camera_model_christopher_mei>
+           <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+           <fx>603.5513255</fx>
+           <fy>603.8779779</fy>
+           <cx>640.6126929</cx>
+           <cy>542.116261</cy>
+           <alpha>0</alpha>
+           <xi>0.8682687683</xi>
+           <k1>-0.1083219697</k1>
+           <k2>-0.004073764325</k2>
+           <p1>-0.0005725567597</p1>
+           <p2>9.712147005e-05</p2>
+         </camera_model_christopher_mei>
+       </camera_model>
+     </video_data>
+    
+   </conti_svs_front>
+
+   <!-- .............. -->
+   <!-- Conti SVS LVDS Left -->
+   <!-- .............. -->
+   <conti_svs_left alias="/sensor_catalog/conti_svs_lvds_left">
+   
+     <alignment>
+       <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+       <translation alias="../video_data/reference_frame/translation"/>
+       <rotation>
+           -0.03043553522, -0.9933107718, -0.1113884592, 
+           0.6025811378, -0.1071461919, 0.7908322616, 
+           -0.7974770533, -0.04305118134, 0.6018113868
+           </rotation>
+     </alignment>
+      
+     <video_data alias="/sensor_catalog/conti_svs_lvds_left/video_data">
+       <active>true</active>
+       <reference_frame>
+         <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+         <translation>4.982606343, 1.207995797, 1.735235698</translation>
+         <rotation>
+           0.9933107718, 0.1113884592, -0.03043553522, 
+           0.1071461919, -0.7908322616, 0.6025811378, 
+           0.04305118134, -0.6018113868, -0.7974770533
+           </rotation>
+       </reference_frame>
+       <camera_model>
+         <camera_model_christopher_mei>
+           <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+           <fx>610.6851205</fx>
+           <fy>611.4246144</fy>
+           <cx>636.1400966</cx>
+           <cy>543.7460986</cy>
+           <alpha>0</alpha>
+           <xi>0.8839495814</xi>
+           <k1>-0.1095157336</k1>
+           <k2>-0.00475146672</k2>
+           <p1>-0.00178719736</p1>
+           <p2>0.0005042005022</p2>
+         </camera_model_christopher_mei>
+       </camera_model>
+     </video_data>
+     
+   </conti_svs_left>
+   
+   <!-- .............. -->
+   <!-- Conti SVS LVDS Rear -->
+   <!-- .............. -->
+   <conti_svs_rear alias="/sensor_catalog/conti_svs_lvds_rear">
+   
+     <alignment>
+       <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+       <translation alias="../video_data/reference_frame/translation"/>
+       <rotation>
+           -0.7447816049, 0.03738800019, -0.6662600832, 
+           -0.0230351104, -0.999274607, -0.03032562391, 
+           -0.6669105972, -0.007238592278, 0.7451025823
+           </rotation>
+     </alignment>
+     
+     <video_data alias="/sensor_catalog/conti_svs_lvds_rear/video_data">
+       <active>true</active>
+       <reference_frame>
+         <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+         <translation>-0.8301760735, -0.0870663344, 0.7834418418</translation>
+         <rotation>
+           -0.03738800019, 0.6662600832, -0.7447816049, 
+           0.999274607, 0.03032562391, -0.0230351104, 
+           0.007238592278, -0.7451025823, -0.6669105972
+           </rotation>
+       </reference_frame>
+       <camera_model>
+         <camera_model_christopher_mei>
+           <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+           <fx>591.5884449</fx>
+           <fy>588.5867802</fy>
+           <cx>639.6730697</cx>
+           <cy>536.0604332</cy>
+           <alpha>0</alpha>
+           <xi>0.8358359884</xi>
+           <k1>-0.1183559051</k1>
+           <k2>0.0006846466148</k2>
+           <p1>-0.00115930494</p1>
+           <p2>-5.065403913e-05</p2>
+         </camera_model_christopher_mei>
+       </camera_model>
+     </video_data>
+     
+   </conti_svs_rear>
+   
+   <!-- ............... -->
+   <!-- Conti SVS LVDS Right -->
+   <!-- ............... -->
+   <conti_svs_right alias="/sensor_catalog/conti_svs_lvds_right">
+   
+     <alignment>
+       <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+       <translation alias="../video_data/reference_frame/translation"/>
+       <rotation>
+           0.06806672902, 0.9966546405, 0.04523768208, 
+           -0.6243961965, 0.07792052754, -0.7772115421, 
+           -0.7781364342, 0.02465601079, 0.6276111622
+           </rotation>
+     </alignment>
+     
+     <video_data alias="/sensor_catalog/conti_svs_lvds_right/video_data">
+       <active>true</active>
+       <reference_frame>
+         <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+         <translation>5.003672425, -1.247696372, 1.75045031</translation>
+         <rotation>
+           -0.9966546405, -0.04523768208, 0.06806672902, 
+           -0.07792052754, 0.7772115421, -0.6243961965, 
+           -0.02465601079, -0.6276111622, -0.7781364342
+           </rotation>
+       </reference_frame>
+       <camera_model>
+         <camera_model_christopher_mei>
+           <comment>updated from config_berta_2020_12_11.xml by lisavecalibv2.m using setup_berta_2020_12_08.m; data from 2020-12-08_Berta_Calibration; processing tstamp 2021-02-08_08-45-38</comment>
+           <fx>610.7023891</fx>
+           <fy>611.8656208</fy>
+           <cx>638.4127435</cx>
+           <cy>543.7700352</cy>
+           <alpha>0</alpha>
+           <xi>0.8791867839</xi>
+           <k1>-0.1106585007</k1>
+           <k2>-0.003654550063</k2>
+           <p1>-0.001216395654</p1>
+           <p2>-0.0004493661864</p2>
+         </camera_model_christopher_mei>
+       </camera_model>
+     </video_data>
+     
+   </conti_svs_right>
+    
+    <egomaster alias="/sensor_catalog/egomaster">
+      <internal>
+          <!-- use one of the blocks below -->
+          <!-- specify the name of the node under vehicle/sensors/ to be used as input for EgoMaster -->
+          <!-- currently, supports type 'id_sara' and 'id_xsens_mti' -->
+          <imu> <device> xsens_mti </device> </imu> 
+          <!-- specify the DDS topic with tEgo data, which will be used to emulate EgoMaster data, completely ignoring the EgoMaster itself -->
+          <!-- emulate> <dds-tego-topic> se/genesys/adma/ego </dds-tego-topic> </emulate -->
+      </internal>
+    </egomaster>
+
+    <garmin-gps alias="/sensor_catalog/gpsd">
+        <sensor_header alias="/sensor_catalog/gpsd/sensor_header">
+            <name>Garmin 18x</name>
+        </sensor_header>
+        <internal>
+            <gpsd>
+                <ip-address> 192.168.0.100 </ip-address>
+            </gpsd>
+        </internal>
+    </garmin-gps>
+
+  </sensors>
+  <hardware>
+    <ddsgw>
+      <internal>
+        <interfaces>
+          <rcan> can4 </rcan>
+          <delphi_rsds_front> can1 </delphi_rsds_front>
+          <delphi_rsds_side> can2 </delphi_rsds_side>
+          <xsens_mti> /dev/xsens </xsens_mti>
+        </interfaces>
+      </internal>
+    </ddsgw>
+    <!-- antenna0 alias="/hardware_catalog/antenna-..." / -->
+    <antenna0>
+      <internal>
+        <name> <_> GNSS antenna </_> </name>
+        <type> <t0>gnss</t0> </type>
+        <position> <x> 3.603 </x> <y> -0.668 </y> <z> 3.698 </z> </position>
+        
+      </internal>
+    </antenna0>
+  </hardware>
+  <systems>
+      <ekf1>
+          <ip_0>192.168.0.101</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf1>
+      <ekf2>
+          <ip_0>192.168.0.102</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf2>
+      <ekf3>
+          <ip_0>192.168.0.103</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf3>
+      <ekf4>
+          <ip_0>192.168.0.104</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf4>
+      <ekf5>
+          <ip_0>192.168.0.105</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf5>
+      <ddsgw>
+          <ip_0>192.168.0.100</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ddsgw>
+      <ekf7>
+          <ip_0>192.168.0.107</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf7>
+      <ekf8>
+          <ip_0>192.168.0.108</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf8>
+      <ekf9>
+          <ip_0>192.168.0.109</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf9>
+      <ekf10>
+          <ip_0>192.168.0.110</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf10>
+      <ekf11>
+          <ip_0>192.168.0.111</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf11>
+      <ekf12>
+          <ip_0>192.168.0.112</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf12>
+      <ekf13>
+          <ip_0>192.168.0.113</ip_0>
+          <timesync>true</timesync>
+          <temperature>true</temperature>
+      </ekf13>
+  </systems>
+</vehicle>
+</parameter_server>
